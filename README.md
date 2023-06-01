@@ -1,1 +1,1 @@
-# ListAnime
+El presente trabajo es un proyecto para la clase de Integradoras de la Universidad Tecnologica de Hermosillo. Nuestra propuesta es una pagina web (foro) que sirva de directorio de series y peliculas de Anime. Los usuarios podran clasificar, ranquear, marcar como visto, agregar contenido y buscar por recomendaciones diferentes tipos de contenido. Una amplia variedad de generos todos dentro del Anime.
