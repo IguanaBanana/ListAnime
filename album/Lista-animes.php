@@ -14,10 +14,30 @@
     
 
     
+    
 
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -179,166 +199,23 @@
 </header>
 
 <main>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">AnimeList</h1>
-        <p class="lead text-body-secondary">Bienvenido, si quieres ingresar nuevos animes o votar, haz log in, si no tienes una cuenta, puedes registrarte en el boton debajo.</p>
-        <p>
-          <a href="login.html" class="btn btn-primary my-2">Log-in</a>
-          <a href="registro.html" class="btn btn-secondary my-2">Registrarte</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm">
-
-            <img src="imagenes/death-note.jpg" width="360" height="500">
-            <div class="card-body">
-              <p class="card-text">Death Note.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button onclick="window.location.href = 'top-1.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                </div>
-                <small class="text-body-secondary">Top 1</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-          <img src="imagenes/shingeki-no-kyojin.jpg" width="360" height="500">
-            <div class="card-body">
-              <p class="card-text">Shingeki no kyojin sagas</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button onclick="window.location.href = 'top-2.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                </div>
-                <small class="text-body-secondary">Top 2</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-          <img src="imagenes/Cowboy-Bebop.jpg" width="360" height="500">
-            <div class="card-body">
-              <p class="card-text">Cowboy Bebop</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button onclick="window.location.href = 'top-3.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                </div>
-                <small class="text-body-secondary">Top 3</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="imagenes/fullmetal-alchemist-brotherhood.jpg" width="360" height="500">
-            <div class="card-body">
-              <p class="card-text">fullmetal-alchemist-brotherhood</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button onclick="window.location.href = 'top-4.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                </div>
-                <small class="text-body-secondary">Top 4</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="imagenes/steins-gate.png" width="360" height="500">
-            <div class="card-body">
-              <p class="card-text">Steins Gate</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button onclick="window.location.href = 'top-5.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                </div>
-                <small class="text-body-secondary">Top 5</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-          <img src="imagenes/dragon-ball-super.jpg" width="360" height="500">
-            <div class="card-body">
-              <p class="card-text">Dragon Ball Super</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button onclick="window.location.href = 'top-6.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                </div>
-                <small class="text-body-secondary">Top 6</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-           <img src="imagenes/naruto.jpeg" width="360" height="500">
-            <div class="card-body">
-              <p class="card-text">Naruto</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button onclick="window.location.href = 'top-7.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                </div>
-                <small class="text-body-secondary">Top 7</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="imagenes/one-piece.webp" width="360" height="500">
-            <div class="card-body">
-              <p class="card-text">One Piece</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button onclick="window.location.href = 'top-8.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                </div>
-                <small class="text-body-secondary">Top 8</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="imagenes/evangelion.jpg" width="360" height="500">
-            <div class="card-body">
-              <p class="card-text">Neon Genesis Evangelion</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button onclick="window.location.href = 'top-9.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
-                </div>
-                <small class="text-body-secondary">Top 9</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<?php
+    $conexion = new mysqli("localhost", "root", "", "listanime") or die("Sin conexion al servidor. Favor de revisar");
+    $query = "SELECT * FROM titulos;";
+    $com = mysqli_query($conexion, $query);
+    if($com->num_rows > 0 ){
+        echo "<table border='1'><tr><th colspan='6'>Animes</th></tr> <tr><th>ID</th> <th>Titulo</th> <th>Genero</th> <th>Genero</th> <th>Genero</th> <th>Episodios</th></tr>";
+        while($registro=$com->fetch_assoc())
+        {
+            echo("\n\t<tr><td>".$registro["id"]."</td>\n\t <td>".$registro["titulo"]."</td>\n\t<td>".$registro["genero"]."\n\t</td>
+            \n\t<td>".$registro["genero2"]."\n\t</td>\n\t<td>".$registro["genero3"]."\n\t</td>\n\t<td>".$registro["episodios"]."\n\t</td></tr>\n</tr>\n");
+        }
+        echo "</table>";
+    }
+    else{
+        echo("Sin registro en la Base de Datos");
+    }
+    ?>
 </main>
 
 <footer class="text-body-secondary py-5">
