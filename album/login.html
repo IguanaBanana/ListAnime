@@ -7,17 +7,37 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.112.5">
-    <title>LOGIN</title>
+    <title>ListAnime</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
-
-    
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
     
 
-<link href=assets\dist\css\bootstrap.min.css rel="stylesheet">
+    
+    
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -79,7 +99,7 @@
         --bs-btn-bg: var(--bd-violet-bg);
         --bs-btn-border-color: var(--bd-violet-bg);
         --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: rgb(101, 40, 224);
+        --bs-btn-hover-bg: #6528e0;
         --bs-btn-hover-border-color: #6528e0;
         --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
         --bs-btn-active-color: var(--bs-btn-hover-color);
@@ -92,10 +112,8 @@
     </style>
 
     
-    <!-- Custom styles for this template -->
-    <link href="sign-in.css" rel="stylesheet">
   </head>
-  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+  <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -120,7 +138,7 @@
               data-bs-toggle="dropdown"
               aria-label="Toggle theme (auto)">
         <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Alternar</span>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
       </button>
       <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
         <li>
@@ -148,31 +166,75 @@
     </div>
 
     
-<main class="form-signin w-100 m-auto">
-  <form>
-    <img class="mb-4" src="..\..\assets\brand\bootstrap-logo.svg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
+<header data-bs-theme="dark">
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>Sobre nosotros</h4>
+          <p class="text-body-secondary">Bienvenido al proyecto de Biblioteca de animes, donde podras obtener informacion sobre animes recientes y podras votar por cuales te parecen mejores.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4>Contacto</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://twitter.com/?lang=es" class="text-white">Siguenos en Twitter</a></li>
+            <li><a href="https://www.facebook.com/" class="text-white">Buscanos on Facebook</a></li>
+            <li><a href="gmail.com" class="text-white">Email </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="Lista-animes.php" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Lista de Animes</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
 
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Correo Electronico</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Contraseña</label>
-    </div>
-
-    <div class="form-check text-start my-3">
-      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Recordarme
-      </label>
-    </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Acceder</button>
-    <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
-  </form>
+<main>
+  <link href="sign-in.css" rel="stylesheet">
+  <main class="form-signin w-100 m-auto">
+    <form class="login-form" action="validarlogin.php" method="post">
+      <center><img class="mb-4" src="..\..\assets\brand\bootstrap-logo.svg" alt="" width="72" height="57"></center>
+      <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
+  
+      <div class="form-floating">
+        <input type="email" class="form-control" name="floatingInput" placeholder="name@example.com" required>
+        <label for="floatingInput">Correo Electronico</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" name="floatingPassword" placeholder="Password" required>
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+  
+      <div class="form-check text-start my-3">
+        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Recordarme
+        </label>
+      </div>
+      <button class="btn btn-primary w-100 py-2" type="submit">Acceder</button>
+      <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
+    </form>
+  </main>
+  <script src=assets\dist\js\bootstrap.bundle.min.js></script>
 </main>
-<script src=assets\dist\js\bootstrap.bundle.min.js></script>
 
-    </body>
-</html>
+<footer class="text-body-secondary py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="index.html">Regresar al inicio</a>
+    </p>
+
+  </div>
+</footer>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+</body></html>
