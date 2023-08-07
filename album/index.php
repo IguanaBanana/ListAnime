@@ -8,7 +8,29 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.112.5">
     <title>ListAnime</title>
-
+    <script>
+             // Función para obtener el estado de inicio de sesión a través de AJAX
+             function cargarEstadoSesion() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var loggedIn = xhr.responseText === 'true';
+                        if (loggedIn) {
+                            document.getElementById('loginForm').style.display = 'none';
+                        }
+                    }
+                }
+            };
+            xhr.open('GET', 'estadosesion.php', true);
+            xhr.send();
+        }
+        
+        window.onload = function () {
+            cargarEstadoSesion();
+        };
+  </script>
+  </script>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
     
@@ -180,7 +202,7 @@
 
 <main>
 
-  <section class="py-5 text-center container">
+  <section class="py-5 text-center container" id="loginForm">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">AnimeList</h1>
@@ -350,6 +372,6 @@
   </div>
 </footer>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-    </body>
+<script src="valsesion.js"></script> 
+</body>
 </html>
