@@ -1,6 +1,10 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="..\..\assets/js/color-modes.js"></script>
+  <head>
+ <!-- <script src="../../assets/js/color-modes.js"></script> -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,28 +12,65 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.112.5">
     <title>ListAnime</title>
-    <script>
-             // Función para obtener el estado de inicio de sesión a través de AJAX
-             function cargarEstadoSesion() {
+  
+    <script> 
+       
+        function cargarEstadoSesion() {
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
+                    if (xhr.status ===  200) {
+                     
                         var loggedIn = xhr.responseText === 'true';
-                        if (loggedIn) {
-                            document.getElementById('loginForm').style.display = 'none';
+
+                        //verifricamos que este logeado
+                        if(xhr.responseText === 'false' || xhr.responseText == ''){
+                          //si no esta logeado
+                           document.getElementById('loginForm').style.display = 'block';
+                            document.getElementById('logout').style.display = 'none';
+                            document.getElementById('divOculto').style.display = 'none';
+                        }else{
+                          //si esta logeado en cualquier nivel de usuario
+                          document.getElementById('loginForm').style.display = 'none';
+                          document.getElementById('logout').style.display = 'block';
                         }
-                    }
+
+                        if(xhr.responseText === 'administrador'){
+                          document.getElementById('loginForm').style.display = 'none';
+                          document.getElementById('logout').style.display = 'block';
+                          document.getElementById('divOculto').style.display = 'block';
+                        }else if(xhr.responseText === 'user'){
+                          document.getElementById('loginForm').style.display = 'none';
+                          document.getElementById('logout').style.display = 'block';
+                          document.getElementById('divOculto').style.display = 'none';
+                        }else if(xhr.responseText === 'true'){
+                          ////logrin moderador
+                        }
+
+
+                        console.log("valor de logged_in xhr ");
+                        console.log(xhr);
+                       // if (loggedIn) {
+                       //     document.getElementById('loginForm').style.display = 'none';
+                       //     document.getElementById('logout').style.display = 'block';
+                       // }
+                       // else {
+                       //     document.getElementById('loginForm').style.display = 'block';
+                       //     document.getElementById('logout').style.display = 'none';
+                       //     document.getElementById('divOculto').style.display = 'none';
+                       // }
+                      }
                 }
             };
-            xhr.open('GET', 'estadosesion.php', true);
+            xhr.open('GET', 'estadosesion.php');
             xhr.send();
         }
         
         window.onload = function () {
             cargarEstadoSesion();
         };
-  </script>
+
+    
   </script>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
@@ -184,6 +225,16 @@
             <li><a href="gmail.com" class="text-white">Email </a></li>
           </ul>
         </div>
+        <div class="col-sm-4 offset-md-1 py-4" id='divOculto'>
+          <h4>Administrador</h4>
+          <ul class="list-unstyled">
+            <li><a href="admiusu.php" class="text-white">Usuarios</a></li>
+            <li><a href="sugetitulos.php" class="text-white">Titulos Sugeridos</a></li>
+            <li><a href="altatitulos.php" class="text-white">Agregar Titulos </a></li>
+          </ul>
+        </div>
+        <form action="cerrar_sesion.php" method="post" id='logout'> <!-- Formulario para cierre de sesión -->
+          <button type="submit">Cerrar sesión</button>
       </div>
     </div>
   </div>
@@ -242,7 +293,7 @@
               <p class="card-text">Shingeki no kyojin sagas</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button onclick="window.location.href = 'top-2.html'" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                  <button onclick="window.location.href = 'top-2.html'" type="button" class="btn btn-sm btn-outline-secondary"> Ver</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
                 </div>
                 <small class="text-body-secondary">Top 2</small>
