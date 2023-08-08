@@ -9,5 +9,5 @@
     if (($result = mysqli_query($conexion, $queryinsert)) == false) {
         die(mysqli_error($conexion));
     }
-    header("location:index.html");
+    header("location:index.php");
 ?>
